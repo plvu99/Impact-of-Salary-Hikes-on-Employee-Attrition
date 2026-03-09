@@ -1,79 +1,155 @@
-# 📉 Impact of Salary Hikes on Employee Attrition
+# Impact of Salary Hikes on Employee Attrition
 
-## 📋 Overview
+## 🔎 Overview
 
-### Problem Statement
+Employee turnover is one of the most expensive operational challenges organizations face. High attrition leads to lost institutional knowledge, decreased productivity, and increased recruitment costs. In the United States alone, businesses lose nearly $1 trillion annually due to employee departures, and replacing a single employee can cost 50–200% of their annual salary. 
 
-Employee turnover is expensive. In the US, businesses lose nearly **$1 trillion annually** due to employee departures (Gallup, 2019). Replacing an employee can cost **between 50% and 200% of their annual salary** (SHRM, 2022). This doesn’t just impact finances; it also leads to lost talent and productivity drop. Therefore, companies need to understand the factors driving attrition and improve their retention strategies.
+This project investigates **whether increasing employee salaries significantly reduces attrition rates**. Using HR analytics data, the analysis examines salary increases alongside other factors such as job satisfaction, work-life balance, and career progression to determine what truly drives employee retention.
 
-### Research Question
+## 🔐 Business Problem
 
-_**Does significantly increasing salary have an effect on employee attrition?**_
+Many organizations attempt to retain talent primarily through salary increases. However, compensation may not be the sole driver of employee loyalty.
 
-Salary is a tangible, universally comparable measure, and it often guides employees’ decisions to stay or leave. We also examine other factors, including job satisfaction, work-life balance, years at company, and so on, to have a better understanding.
+Companies must answer an important question: _Does increasing salary meaningfully reduce employee attrition?_
 
-Our study focuses on **Tech and Consulting** industries, which are both highly competitive and talent-driven. Salary hikes are crucial for retaining top talent in these fields.
+If salary increases alone are insufficient, organizations risk allocating retention budgets inefficiently. Understanding the real drivers of attrition allows HR leaders to design more effective retention strategies that focus on:
+- Employee engagement
+- Career development
+- Workplace culture
+- Long-term incentives
 
-Our data is all **voluntary** and **US-based only**, from **R&D, HR, and Sales departments**. These roles require specialized skills and face intense competition, so competitive pay is essential for loyalty.
+This study focuses on technology and consulting roles, where competition for skilled talent is particularly intense.
 
-Through this analysis, we aim to provide actionable insights to help companies enhance their retention strategies.
+## 📊 Dataset
 
-### Initial Descriptive Statistics and Visualizations
+The analysis uses the IBM HR Analytics Employee Attrition & Performance dataset available on [Kaggle](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset/data).
 
-- Most salary hikes fall between 10-20%, indicating a structured salary raise policy.
+The dataset includes employee information across several dimensions:
 
-- There is no major difference in salary hike distribution between employees who stayed vs. left.
+**Employee attributes**
+- Age
+- Department
+- Job level
+- Years at company
 
-- Salary hikes alone do not strongly influence attrition—other factors like job satisfaction and career growth matter more.
+**Compensation metrics**
+- Monthly income
+- Percentage salary hike
+- Stock option level
 
-### Multiple Possible Outcomes
+**Work environment variables**
+- Job satisfaction
+- Work-life balance
+- Performance rating
 
-- Higher salary hike reduces attrition (Google, Costco).
+**Outcome variable**
+- Attrition status (whether an employee left the company)
 
-- There is no significant relationship between salary hikes and attrition (Goldman Sachs, McKinsey & Company).
+In this study:
+- **Independent variable:** Percentage Salary Hike
+- **Dependent variable:** Employee Attrition
 
-- Higher salary hike increases attrition (Goldman Sachs, Citibank, J.P.Morgan).
+Several additional variables were included as confounding factors to control for other drivers of employee turnover.
 
-## 📊 Analysis
+## 📍 Methodology
 
-### Data Overview
+The analysis combines descriptive analytics and causal inference techniques.
 
-The dataset was from Kaggle: [IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset/data)
+### 1. Data Cleaning and Filtering
 
-**Key Variables:**
+Several preprocessing steps were applied:
+- Removed employees without salary hikes
+- Dropped rows with missing key variables
+- Removed extreme salary hike outliers
+- Excluded records with inconsistent promotion data
+- Filtered employees with invalid tenure values
 
-- X (Independent Variable): Percentage Salary Hike
+These steps ensured a clean dataset for causal analysis.
 
-- Y (Dependent Variable): Attrition Rate
+### 2. Exploratory Data Analysis
 
-**Confounding Variables:**
+Initial analysis explored salary distributions and attrition patterns.
 
-- Job Satisfaction
+Key observations:
+- Most salary increases fall between 10–20%
+- Salary hike distributions are similar for employees who stayed vs. left
+- Attrition patterns vary more strongly with job satisfaction and tenure than with salary changes. 
 
-- Work-life Balance
+### 3. Logistic Regression
 
-- Years at Company
+A logistic regression model was used to estimate the probability of attrition:
 
-- Stock Options
+```
+Attrition = f(SalaryHike, JobSatisfaction, WorkLifeBalance, YearsAtCompany, StockOptions, JobLevel)
+```
 
-- Job Level
+This approach evaluates how each factor influences the likelihood of employee turnover.
 
-### Proposed Ideal Experiment
+### 4. Difference-in-Differences (DiD)
 
-- **Logistic Regression**
+To estimate the causal impact of salary hikes, the study used a Difference-in-Differences (DiD) approach.
 
-- **Difference-in-Differences (DiD):**
+- **Treatment group:** Employees receiving salary hikes greater than 18%
+- **Control group:** Employees receiving salary hikes below 18%
+- **Pre-treatment period:** Employees promoted within the past two years
+- **Post-treatment period:** Employees promoted earlier than two years
 
-  - Mimics an experiment using real-world salary hike data.
+<img width="584" height="455" alt="image" src="https://github.com/user-attachments/assets/57d20ba2-93d1-4cb4-ae58-91bffb6ee9c2" />
 
-  - Leverages natural salary increases as the ‘treatment’ while keeping a control group.
+<img width="571" height="455" alt="image" src="https://github.com/user-attachments/assets/4b3afeb0-bc29-4b4c-958b-20e3597cb515" />
 
-  - Removes bias from factors affecting both groups equally (e.g., economy, company policies).
+The DiD regression model isolates the effect of salary increases while controlling for other external factors.
 
-## 📝 Conclusion
+## 🔑 Key Insights
 
-_Retention isn’t just about compensation—it’s about commitment!_
+### 1. Salary hikes have weak impact on attrition
 
-- There is strong evidence that significant salary hikes alone do not guarantee employee retention.
+Salary increases show very weak correlation with employee attrition.
 
-- Investing in employee satisfaction, career development, and a supportive work environment will yield better long-term retention!
+The logistic regression model indicates that salary hikes are not statistically significant predictors of employee turnover.
+
+### 2. Employee satisfaction is a strong retention driver
+
+Two variables significantly reduce attrition risk:
+- Job satisfaction
+- Work-life balance
+
+Employees who feel engaged and supported in their roles are much more likely to remain with the organization.
+
+### 3. Career growth and long-term incentives matter
+
+The analysis shows strong retention effects for:
+- Stock options
+- Job level progression
+- Longer tenure
+
+Employees who see long-term growth opportunities are less likely to leave.
+
+### 4. Salary alone cannot solve retention problems
+
+The Difference-in-Differences analysis confirms that even significant salary increases do not meaningfully change attrition rates.
+
+Retention is driven by a combination of engagement, career development, and workplace satisfaction rather than compensation alone. 
+
+## ✍️ Business Recommendations
+
+### 1. Focus on employee engagement
+
+Invest in improving job satisfaction through meaningful work, recognition programs, and strong leadership.
+
+### 2. Improve work-life balance
+
+Organizations should implement policies that support employee well-being, such as flexible work arrangements, manageable workloads, and mental health support.
+
+### 3. Create clear career development paths
+
+Employees remain longer when they see opportunities for growth. Companies should prioritize mentorship programs, promotion transparency, and skill development initiatives.
+
+### 4. Use compensation strategically
+
+Salary increases should be part of a broader retention strategy, combined with stock options, performance incentives, and long-term rewards.
+
+## ⚙ Tools & Techniques
+
+- Python (Pandas, NumPy, Matplotlib, Seaborn)
+- Statistical Modeling (Logistic Regression, Difference-in-Differences)
