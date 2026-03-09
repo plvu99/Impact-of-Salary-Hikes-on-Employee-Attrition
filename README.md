@@ -4,7 +4,7 @@
 
 Employee turnover is one of the most expensive operational challenges organizations face. High attrition leads to lost institutional knowledge, decreased productivity, and increased recruitment costs. In the United States alone, businesses lose nearly $1 trillion annually due to employee departures, and replacing a single employee can cost 50–200% of their annual salary. 
 
-This project investigates **whether increasing employee salaries significantly reduces attrition rates**. Using HR analytics data, the analysis examines salary increases alongside other factors such as job satisfaction, work-life balance, and career progression to determine what truly drives employee retention.
+This project investigates whether **increasing employee salaries significantly reduces attrition rates**. Using HR analytics data, the analysis **examines salary increases alongside other factors** such as job satisfaction, work-life balance, and career progression to determine what truly drives employee retention.
 
 ## 🔐 Business Problem
 
@@ -13,10 +13,10 @@ Many organizations attempt to retain talent primarily through salary increases. 
 Companies must answer an important question: _Does increasing salary meaningfully reduce employee attrition?_
 
 If salary increases alone are insufficient, organizations risk allocating retention budgets inefficiently. Understanding the real drivers of attrition allows HR leaders to design more effective retention strategies that focus on:
-- Employee engagement
-- Career development
-- Workplace culture
-- Long-term incentives
+- employee engagement
+- career development
+- workplace culture
+- long-term incentives
 
 This study focuses on technology and consulting roles, where competition for skilled talent is particularly intense.
 
@@ -27,23 +27,23 @@ The analysis uses the IBM HR Analytics Employee Attrition & Performance dataset 
 The dataset includes employee information across several dimensions:
 
 **Employee attributes**
-- Age
-- Department
-- Job level
-- Years at company
+- age
+- department
+- job level
+- years at company
 
 **Compensation metrics**
-- Monthly income
-- Percentage salary hike
-- Stock option level
+- monthly income
+- percentage salary hike
+- stock option level
 
 **Work environment variables**
-- Job satisfaction
-- Work-life balance
-- Performance rating
+- job satisfaction
+- work-life balance
+- performance rating
 
 **Outcome variable**
-- Attrition status (whether an employee left the company)
+- attrition status (whether an employee left the company)
 
 In this study:
 - **Independent variable:** Percentage Salary Hike
@@ -111,17 +111,17 @@ The logistic regression model indicates that salary hikes are not statistically 
 ### 2. Employee satisfaction is a strong retention driver
 
 Two variables significantly reduce attrition risk:
-- Job satisfaction
-- Work-life balance
+- job satisfaction
+- work-life balance
 
 Employees who feel engaged and supported in their roles are much more likely to remain with the organization.
 
 ### 3. Career growth and long-term incentives matter
 
 The analysis shows strong retention effects for:
-- Stock options
-- Job level progression
-- Longer tenure
+- stock options
+- job level progression
+- longer tenure
 
 Employees who see long-term growth opportunities are less likely to leave.
 
@@ -151,5 +151,7 @@ Salary increases should be part of a broader retention strategy, combined with s
 
 ## ⚙ Tools & Techniques
 
-- Python (Pandas, NumPy, Matplotlib, Seaborn)
-- Statistical Modeling (Logistic Regression, Difference-in-Differences)
+- Python
+- Data preprocessing (Pandas, NumPy)
+- Data visualization (Matplotlib, Seaborn)
+- Statistical modeling (Logistic Regression, Difference-in-Differences)
