@@ -13,10 +13,10 @@ Many organizations attempt to retain talent primarily through salary increases. 
 Companies must answer an important question: _Does increasing salary meaningfully reduce employee attrition?_
 
 If salary increases alone are insufficient, organizations risk allocating retention budgets inefficiently. Understanding the real drivers of attrition allows HR leaders to design more effective retention strategies that focus on:
-- employee engagement
-- career development
-- workplace culture
-- long-term incentives
+- Employee engagement
+- Career development
+- Workplace culture
+- Long-term incentives
 
 This study focuses on technology and consulting roles, where competition for skilled talent is particularly intense.
 
@@ -27,23 +27,23 @@ The analysis uses the IBM HR Analytics Employee Attrition & Performance dataset 
 The dataset includes employee information across several dimensions:
 
 **Employee attributes**
-- age
-- department
-- job level
-- years at company
+- Age
+- Department
+- Job level
+- Years at company
 
 **Compensation metrics**
-- monthly income
-- percentage salary hike
-- stock option level
+- Monthly income
+- Percentage salary hike
+- Stock option level
 
 **Work environment variables**
-- job satisfaction
-- work-life balance
-- performance rating
+- Job satisfaction
+- Work-life balance
+- Performance rating
 
 **Outcome variable**
-- attrition status (whether an employee left the company)
+- Attrition status (whether an employee left the company)
 
 In this study:
 - **Independent variable:** Percentage Salary Hike
@@ -111,17 +111,17 @@ The logistic regression model indicates that salary hikes are not statistically 
 ### 2. Employee satisfaction is a strong retention driver
 
 Two variables significantly reduce attrition risk:
-- job satisfaction
-- work-life balance
+- Job satisfaction
+- Work-life balance
 
 Employees who feel engaged and supported in their roles are much more likely to remain with the organization.
 
 ### 3. Career growth and long-term incentives matter
 
 The analysis shows strong retention effects for:
-- stock options
-- job level progression
-- longer tenure
+- Stock options
+- Job level progression
+- Longer tenure
 
 Employees who see long-term growth opportunities are less likely to leave.
 
