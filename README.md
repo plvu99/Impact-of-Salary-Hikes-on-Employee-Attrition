@@ -13,10 +13,10 @@ Many organizations attempt to retain talent primarily through salary increases. 
 Companies must answer an important question: _Does increasing salary meaningfully reduce employee attrition?_
 
 If salary increases alone are insufficient, organizations risk allocating retention budgets inefficiently. Understanding the real drivers of attrition allows HR leaders to design more effective retention strategies that focus on:
-- Employee engagement
-- Career development
-- Workplace culture
-- Long-term incentives
+- employee engagement
+- career development
+- workplace culture
+- long-term incentives
 
 This study focuses on technology and consulting roles, where competition for skilled talent is particularly intense.
 
@@ -111,17 +111,17 @@ The logistic regression model indicates that salary hikes are not statistically 
 ### 2. Employee satisfaction is a strong retention driver
 
 Two variables significantly reduce attrition risk:
-- Job satisfaction
-- Work-life balance
+- job satisfaction
+- work-life balance
 
 Employees who feel engaged and supported in their roles are much more likely to remain with the organization.
 
 ### 3. Career growth and long-term incentives matter
 
 The analysis shows strong retention effects for:
-- Stock options
-- Job level progression
-- Longer tenure
+- stock options
+- job level progression
+- longer tenure
 
 Employees who see long-term growth opportunities are less likely to leave.
 
